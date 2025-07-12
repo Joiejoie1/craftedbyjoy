@@ -1,11 +1,19 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import Home from "./pages/Home"; // Only if you have this file created
+import Home from "./pages/Home";
 
 export default function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -20,4 +28,3 @@ export default function App() {
     </>
   );
 }
-
