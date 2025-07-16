@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./index.html",
@@ -7,15 +8,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Inter", ...fontFamily.sans],
+      },
+      colors: {
+        border: "hsl(var(--border))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        // Add more tokens like 'primary', 'card', etc. if you use them
       },
       borderRadius: {
-        lg: "0.5rem",
-        md: "0.375rem",
-        sm: "0.25rem",
+        lg: "var(--radius)",
       },
     },
   },
   plugins: [],
-}
+};
 
