@@ -18,13 +18,22 @@ export default function Home() {
         Welcome to My Portfolio
       </h1>
       
-      <p className="text-muted-foreground max-w-md mx-auto text-lg">
-        Frontend Engineer & Open Source Contributor.
-      </p>
+      {/* 3. Merged Action Buttons Container */}
+      <div className="flex flex-col sm:flex-row gap-4 mt-2">
+        {/* Explore Projects Action */}
+        <Button variant="default" className="px-6 py-5 text-base shadow-md hover:scale-105 transition-transform">
+          Explore Projects
+        </Button>
 
-      <Button variant="default" className="mt-2 px-6 py-5 text-base shadow-md hover:scale-105 transition-transform">
-        Explore Projects
-      </Button>
+        {/* CV Download Action */}
+        <a 
+          href="/Joy_Gundu_CV.pdf" 
+          download="Joy_Gundu_CV.pdf"
+          className="inline-flex items-center justify-center px-6 py-2.5 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-base font-medium shadow-md hover:scale-105 transition-transform"
+        >
+          Download CV 📄
+        </a>
+      </div>
     </div>
   );
 }
